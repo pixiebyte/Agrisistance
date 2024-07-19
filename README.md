@@ -13,7 +13,7 @@ Agrisistance is an AI-driven mobile app designed to help African farmers optimiz
 - **assets/**: Images, icons, and other static assets used in the app.
 - **README.md**: Project overview and setup instructions.
 
-##Problem Solving Approach
+## Problem Solving Approach
 Agrisistance tackles the following problems:
 
 Optimizing Land Use: By analyzing soil properties, weather conditions, and historical crop data, Agrisistance provides recommendations on the best crops to plant and the optimal planting schedule.
@@ -26,18 +26,18 @@ Resource Management: The app offers tools for efficient resource management, inc
 
 Networking and Industrial Connections: Agrisistance includes features to connect farmers with other related industries such as delivery services, processing factories, and other agricultural businesses. This helps farmers to establish valuable industrial connections and streamline their supply chain processes.
 
-##How to Use
+## How to Use
 Installation: Download and install the Agrisistance app from the [App Store/Google Play Store].
 Registration: Create an account and log in to access personalized features.
 Data Input: Enter information about your farm, including location, soil type, and crops.
 Get Recommendations: Receive tailored recommendations and actionable insights to optimize your farming practices.
 Monitor Progress: Track the impact of implemented strategies and adjust based on real-time feedback and analytics.
 
-##Contributing
+## Contributing
 We welcome contributions from the community. Please read our contributing guidelines for more information on how to get involved.
 
-##License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-##Contact
+## Contact
 For any questions or feedback, please reach out to our team at agrisistance@example.com.

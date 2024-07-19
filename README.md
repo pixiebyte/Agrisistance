@@ -2,19 +2,16 @@
 Agrisistance is an AI-driven mobile app designed to help African farmers optimize land use and boost crop productivity. By leveraging advanced machine learning algorithms and data analytics, Agrisistance provides farmers with actionable insights and personalized recommendations tailored to their specific needs.
 
 ## Structure
-The repository is organized as follows:
 
-docs/: Documentation files, including user guides and technical documentation.
-src/: Source code for the mobile app, including frontend and backend components.
-models/: Machine learning models and related scripts for training, evaluation, and deployment.
-data/: Datasets used for model training and validation.
-tests/: Unit and integration tests to ensure the robustness and reliability of the application.
-scripts/: Utility scripts for data preprocessing, model training, and other tasks.
-config/: Configuration files for different environments (development, testing, production).
-assets/: Images, icons, and other static assets used in the app.
-README.md: Project overview and setup instructions.
-##Purpose
-The primary goal of Agrisistance is to empower farmers with the tools and knowledge needed to make informed decisions about their agricultural practices. By addressing key challenges related to land use, crop health, business planning, and resource management, Agrisistance aims to improve agricultural productivity and sustainability in Africa.
+- **docs/**: Documentation files, including user guides and technical documentation.
+- **src/**: Source code for the mobile app, including frontend and backend components.
+- **models/**: Machine learning models and related scripts for training, evaluation, and deployment.
+- **data/**: Datasets used for model training and validation.
+- **tests/**: Unit and integration tests to ensure the robustness and reliability of the application.
+- **scripts/**: Utility scripts for data preprocessing, model training, and other tasks.
+- **config/**: Configuration files for different environments (development, testing, production).
+- **assets/**: Images, icons, and other static assets used in the app.
+- **README.md**: Project overview and setup instructions.
 
 ##Problem Solving Approach
 Agrisistance tackles the following problems:

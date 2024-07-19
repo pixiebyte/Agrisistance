@@ -40,4 +40,4 @@ We welcome contributions from the community. Please read our contributing guidel
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contact
-For any questions or feedback, please reach out to our team at agrisistance@example.com.
+For any questions or feedback, please reach out to our team at amel.feddag@ensia.edu.dz

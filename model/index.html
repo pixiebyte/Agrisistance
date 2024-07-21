@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Crop Prediction Model</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Crop Prediction Model</h1>
+        <div>
+            <label>pH level:</label>
+            <input type="number" id="ph" step="0.1" min="0" max="14" value="6.5"><br>
+            <label>Temperature (°C):</label>
+            <input type="number" id="temperature" step="0.1" min="-50" max="60" value="22.5"><br>
+            <label>Rainfall (mm):</label>
+            <input type="number" id="rainfall" step="0.1" min="0" max="2000" value="548.4"><br>
+            <label>Humidity (%):</label>
+            <input type="number" id="humidity" step="0.1" min="0" max="100" value="67.3"><br>
+            <label>Nitrogen (mg/kg):</label>
+            <input type="number" id="nitrogen" step="0.1" min="0" max="1000" value="89.3"><br>
+            <label>Phosphorus (mg/kg):</label>
+            <input type="number" id="phosphorus" step="0.1" min="0" max="1000" value="39.9"><br>
+            <label>Potassium (mg/kg):</label>
+            <input type="number" id="potassium" step="0.1" min="0" max="1000" value="49.1"><br>
+            <button onclick="predictCrops()">Predict Crops</button>
+        </div>
+        <div id="results"></div>
+    </div>
+    <script>
+        async function predictCrops() {
+            const ph = parseFloat(document.getElementById('ph').value);
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            const rainfall = parseFloat(document.getElementById('rainfall').value);
+            const humidity = parseFloat(document.getElementById('humidity').value);
+            const nitrogen = parseFloat(document.getElementById('nitrogen').value);
+            const phosphorus = parseFloat(document.getElementById('phosphorus').value);
+            const potassium = parseFloat(document.getElementById('potassium').value);
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ph, temperature, rainfall, humidity, nitrogen, phosphorus, potassium })
+            });
+
+            const crops = await response.json();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            crops.forEach(crop => {
+                const cropCard = `
+                    <div class="crop-card">
+                        <div class="crop-header">
+                            <img src="tomatoes-icon.png" alt="${crop.name}">
+                            <div>
+                                <h3>${crop.name}</h3>
+                                <p>${crop.area}m²</p>
+                            </div>
+                        </div>
+                        <p>Humidity: ${crop.humidity}/10</p>
+                        <p>Temperature: ${crop.temperature}/10</p>
+                        <p>Investment: ${crop.investment}/10</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: ${crop.progress}%;"></div>
+                        </div>
+                        <div class="yield-info">
+                            <span>${crop.yield_info[0]}</span>
+                            <span>${crop.yield_info[1]}</span>
+                        </div>
+                    </div>
+                `;
+                resultsDiv.innerHTML += cropCard;
+            });
+        }
+    </script>
+</body>
+</html>
